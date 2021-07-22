@@ -105,7 +105,7 @@ function useClickOutCalendar(handle: any) {
     const handleClickOutside = (e: any) => {
       // console.log(ref.current);
       const calendarElm = document.querySelector(".react-calendar");
-      if(calendarElm && !calendarElm.contains(e.target)) {
+      if (calendarElm && !calendarElm.contains(e.target)) {
         handle();
       }
     };
@@ -125,12 +125,12 @@ function BookCard() {
 
   const toggleStartDateCalendar = () => {
     setStartCalendarOpen(!isStartCalendarOpen);
-    if(isReturnCalendarOpen) setReturnCalendarOpen(false);
+    if (isReturnCalendarOpen) setReturnCalendarOpen(false);
   }
 
   const toggleReturnDateCalendar = () => {
     setReturnCalendarOpen(!isReturnCalendarOpen);
-    if(isStartCalendarOpen) setStartCalendarOpen(false);
+    if (isStartCalendarOpen) setStartCalendarOpen(false);
   }
 
   const calendarRef = useClickOutCalendar(() => {
@@ -138,33 +138,33 @@ function BookCard() {
     setReturnCalendarOpen(false);
   });
 
-    return (
-        <CardContainer>
-            <ItemContainer>
-                <Icon>
-                    <FontAwesomeIcon icon={faCalendarAlt} />
-                </Icon>
-                <Name onClick={toggleStartDateCalendar} >Pick UP Date</Name>
-                <SmallIcon>
-                  <FontAwesomeIcon icon={isStartCalendarOpen ? faCaretUp : faCaretDown} />
-                </SmallIcon>
-                {isStartCalendarOpen && <DateCalendar ref={calendarRef} value={startDate} onChange={setStartDate as any}  />}
-            </ItemContainer>
-            <LineSeperator />
-            <ItemContainer>
-                <Icon>
-                    <FontAwesomeIcon icon={faCalendarAlt} />
-                </Icon>
-                <Name onClick={toggleReturnDateCalendar}>Return Name</Name>
-                <SmallIcon>
-                  <FontAwesomeIcon icon={isReturnCalendarOpen ? faCaretUp : faCaretDown} />
-                </SmallIcon>
-                {isReturnCalendarOpen && <DateCalendar offset ref={calendarRef} value={returnDate} onChange={setReturnDate as any}  />}
-            </ItemContainer>
-            <Marginer direction="horizontal" margin="2em" />
-            <Button text="Book Your Ride" />
-        </CardContainer>
-    )
+  return (
+    <CardContainer>
+      <ItemContainer>
+        <Icon>
+          <FontAwesomeIcon icon={faCalendarAlt} />
+        </Icon>
+        <Name onClick={toggleStartDateCalendar} >Pick UP Date</Name>
+        <SmallIcon>
+          <FontAwesomeIcon icon={isStartCalendarOpen ? faCaretUp : faCaretDown} />
+        </SmallIcon>
+        {isStartCalendarOpen && <DateCalendar ref={calendarRef} value={startDate} onChange={setStartDate as any} />}
+      </ItemContainer>
+      <LineSeperator />
+      <ItemContainer>
+        <Icon>
+          <FontAwesomeIcon icon={faCalendarAlt} />
+        </Icon>
+        <Name onClick={toggleReturnDateCalendar}>Return Name</Name>
+        <SmallIcon>
+          <FontAwesomeIcon icon={isReturnCalendarOpen ? faCaretUp : faCaretDown} />
+        </SmallIcon>
+        {isReturnCalendarOpen && <DateCalendar offset ref={calendarRef} value={returnDate} onChange={setReturnDate as any} />}
+      </ItemContainer>
+      <Marginer direction="horizontal" margin="2em" />
+      <Button text="Book Your Ride" />
+    </CardContainer>
+  )
 }
 
 export default BookCard;

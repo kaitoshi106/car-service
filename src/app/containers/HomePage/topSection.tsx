@@ -140,27 +140,27 @@ const ButtonsContainer = styled.div`
   `};
 `;
 
-export function TopSection(){
-    return (
-        <TopSectionContainer>
-          <LeftContainer>
-            <Slogan>Rent The Best Qulity Car's With Us</Slogan>
-            <Description>
-            Satos - Car Rent & Selling Template for car dealership and car listings websites. It helps you list, manage & sell cars easily with advanced search, auto-populating for vehicle data, lead capture, gallery, maps.
-            </Description>
-            <ButtonsContainer>
-              <Button text="Book Your Ride" />
-              <Button theme="filled" text="Sell Your Car" />
-            </ButtonsContainer>
-          </LeftContainer>
-          <RightContainer>
-            <BlobContainer>
-              <img src={BlobImg} />
-            </BlobContainer>
-            <StandaloneCar>
-              <img src={MclarenCarImg} />
-            </StandaloneCar>
-          </RightContainer>
-        </TopSectionContainer>
-      );
+export function TopSection() {
+  return (
+    <TopSectionContainer>
+      <LeftContainer>
+        <Slogan>Rent The Best Qulity Car's With Us</Slogan>
+        <Description>
+          Satos - Car Rent & Selling Template for car dealership and car listings websites. It helps you list, manage & sell cars easily with advanced search, auto-populating for vehicle data, lead capture, gallery, maps.
+        </Description>
+        <ButtonsContainer>
+          <Button text="Book Your Ride" />
+          <Button theme="filled" text="Sell Your Car" />
+        </ButtonsContainer>
+      </LeftContainer>
+      <RightContainer>
+        <BlobContainer>
+          <img src={BlobImg} />
+        </BlobContainer>
+        <StandaloneCar>
+          <img src={MclarenCarImg} />
+        </StandaloneCar>
+      </RightContainer>
+    </TopSectionContainer>
+  );
 }
